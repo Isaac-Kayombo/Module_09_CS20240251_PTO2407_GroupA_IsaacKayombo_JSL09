@@ -13,6 +13,14 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
 
 // CoinGecko API FOR GETTING CRYPTO DATA
 fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
-    .then(res => res.json())
-    .then(data => console.log(data))
+    .then(res => {
+        if (!res.ok) {
+            throw Error("Something went wrong")
+        }
+        console.log(res.status)
+        return res.json()
+    })
+    .then(data => {
+        console.log(data)
+    })
     .catch(err => console.error(err))
