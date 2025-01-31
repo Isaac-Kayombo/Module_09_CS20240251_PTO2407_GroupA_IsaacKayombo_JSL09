@@ -25,3 +25,7 @@ main {
     display: flex;
     justify-content: space-between;
 }
+
+h1.time {
+    text-align: center;
+}
