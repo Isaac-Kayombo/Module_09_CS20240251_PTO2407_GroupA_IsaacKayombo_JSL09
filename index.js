@@ -20,9 +20,16 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
         return res.json()
     })
     .then(data => {
+        // DOGECOIN IMAGE
         document.getElementById("crypto-top").innerHTML = `
             <img src=${data.image.small} />
             <span>${data.name}</span>
+        `
+        // PRICES
+        document.getElementById("crypto").innerHTML += `
+            <p>🎯: $${data.market_data.current_price.usd}</p>
+            <p>👆: $${data.market_data.high_24h.usd}</p>
+            <p>👇: $${data.market_data.low_24h.usd}</p>
         `
     })
     .catch(err => console.error(err))
