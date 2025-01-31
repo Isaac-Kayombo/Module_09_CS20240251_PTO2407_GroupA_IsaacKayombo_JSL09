@@ -17,10 +17,12 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
         if (!res.ok) {
             throw Error("Something went wrong")
         }
-        console.log(res.status)
         return res.json()
     })
     .then(data => {
-        console.log(data)
+        document.getElementById("crypto").innerHTML = `
+            <img src=${data.image.small} />
+            <span>${data.name}</span>
+        `
     })
     .catch(err => console.error(err))
