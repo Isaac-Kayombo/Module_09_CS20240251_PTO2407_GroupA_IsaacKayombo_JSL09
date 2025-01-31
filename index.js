@@ -8,5 +8,6 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
     })
     // SETTING DEFAULT BACKGROUND IMAGE IF UNSPLASH API FAILS
     .catch(err => {
-        document.body.style.backgroundImage = `url(https://images.unsplash.com/photo-1506260408121-e353d10b87c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxNDI0NzB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgzNDk4NzB8&ixlib=rb-4.0.3&q=80&w=1080)`
+        document.body.style.backgroundImage = `url(https://images.unsplash.com/photo-1461301214746-1e109215d6d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxNDI0NzB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzgzNTAyNjl8&ixlib=rb-4.0.3&q=80&w=1080)`
+        document.getElementById("author").textContent = ` By: Kace Rodriguez`
     })
