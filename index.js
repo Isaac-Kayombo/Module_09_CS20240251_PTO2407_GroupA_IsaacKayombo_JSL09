@@ -13,6 +13,7 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
 
 // CoinGecko API FOR GETTING CRYPTO DATA
 fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
+    // ERROR DISPLAYS IF API FAILS
     .then(res => {
         if (!res.ok) {
             throw Error("Something went wrong")
@@ -52,7 +53,7 @@ navigator.geolocation.getCurrentPosition(position => {
             return res.json()
         })
         .then(data => {
-            console.log(data)
+            // WEATHER ITEMS ON PAGE
             const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
             document.getElementById("weather").innerHTML = `
                 <img src=${iconUrl} />
