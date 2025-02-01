@@ -40,3 +40,19 @@ function getCurrentTime() {
     document.getElementById("time").textContent = date.toLocaleTimeString("en-us", {timeStyle: "short"})
 }
 setInterval(getCurrentTime, 1000)
+
+// GEOLOCATION API FOR GETTING WEATHER DATA USING CURRENT LOCATION/POSITION
+navigator.geolocation.getCurrentPosition(position => {
+    fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric`)
+    // ERROR DISPLAYS IF API FAILS
+        .then(res => {
+            if (!res.ok) {
+                throw Error("Weather data not available")
+            }
+            return res.json()
+        })
+        .then(data => {
+            console.log(data)
+        })
+        .catch(err => console.log(err))
+});
