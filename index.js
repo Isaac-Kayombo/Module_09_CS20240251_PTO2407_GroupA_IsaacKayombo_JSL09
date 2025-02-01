@@ -34,6 +34,9 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
     })
     .catch(err => console.error(err))
 
-// ADDING CURRENT TIME
-const date = new Date()
-document.getElementById("time").textContent = date.toLocaleTimeString("en-us", {timeStyle: "short"})
+// DISPLAYING AND UPDATING CURRENT TIME EVERY SECOND
+function getCurrentTime() {
+    const date = new Date()
+    document.getElementById("time").textContent = date.toLocaleTimeString("en-us", {timeStyle: "short"})
+}
+setInterval(getCurrentTime, 1000)
