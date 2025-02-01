@@ -16,7 +16,7 @@ try {
     const res = await fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
     // ERROR DISPLAYS IF API FAILS
     if (!res.ok) {
-    throw Error("Something went wrong")
+        throw Error("Something went wrong")
     }
     const data = await res.json()
 
